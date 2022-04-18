@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3607cb0-7893-4986-9a0d-19b14f79d680" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6f17fc2c-f715-40dc-a5ee-7f3b5cbe011d.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6f17fc2c-f715-40dc-a5ee-7f3b5cbe011d/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6f17fc2c-f715-40dc-a5ee-7f3b5cbe011d/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6f17fc2c-f715-40dc-a5ee-7f3b5cbe011d/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6f17fc2c-f715-40dc-a5ee-7f3b5cbe011d/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/SD_Dubai.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SD_Dubai.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -11,6 +18,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -38,8 +50,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -48,6 +62,7 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="rake --tasks" />
+      <command value="rails db:create" />
     </option>
   </component>
   <component name="RunManager" selected="Rails.Development: SD_Dubai">
@@ -169,7 +184,9 @@
       <option name="presentableId" value="Default" />
       <updated>1649503257899</updated>
       <workItem from="1649503265717" duration="966000" />
-      <workItem from="1649504280312" duration="1841000" />
+      <workItem from="1649504280312" duration="3953000" />
+      <workItem from="1649674517324" duration="525000" />
+      <workItem from="1649836545175" duration="420000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1649503666568</created>
@@ -178,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649503666568</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Init commit">
+      <created>1649514698450</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649514698450</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,9 +235,10 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Init project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init project" />
+    <MESSAGE value="Init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init commit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SD_Dubai@Development__SD_Dubai.rcov" NAME="Development: SD_Dubai Coverage Results" MODIFIED="1649504730272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="SD_Dubai" />
+    <SUITE FILE_PATH="coverage/SD_Dubai@Development__SD_Dubai.rcov" NAME="Development: SD_Dubai Coverage Results" MODIFIED="1649517232196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="SD_Dubai" />
   </component>
 </project>
