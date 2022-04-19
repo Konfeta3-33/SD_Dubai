@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3607cb0-7893-4986-9a0d-19b14f79d680" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6f17fc2c-f715-40dc-a5ee-7f3b5cbe011d.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6f17fc2c-f715-40dc-a5ee-7f3b5cbe011d/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6f17fc2c-f715-40dc-a5ee-7f3b5cbe011d/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6f17fc2c-f715-40dc-a5ee-7f3b5cbe011d/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6f17fc2c-f715-40dc-a5ee-7f3b5cbe011d/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SD_Dubai.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SD_Dubai.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +178,7 @@
       <workItem from="1649503265717" duration="966000" />
       <workItem from="1649504280312" duration="3953000" />
       <workItem from="1649674517324" duration="525000" />
-      <workItem from="1649836545175" duration="420000" />
+      <workItem from="1649836545175" duration="751000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1649503666568</created>
@@ -202,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649514698450</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Default changes">
+      <created>1650279171626</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1650279171626</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +235,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Init project" />
     <MESSAGE value="Init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init commit" />
+    <MESSAGE value="Default changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Default changes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SD_Dubai@Development__SD_Dubai.rcov" NAME="Development: SD_Dubai Coverage Results" MODIFIED="1649517232196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="SD_Dubai" />
