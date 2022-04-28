@@ -1,0 +1,13 @@
+<div class="flex justify-between my-7">
+  <img src="<%= asset_path('logo.png') %>" alt="Skydive Dubai">
+  <div class="navbar-text flex justify-between items-center">
+    <% if user_signed_in? %>
+      <div class="mr-6">
+        Logged in as <strong><%= current_user.login %></strong>
+      </div>
+      <%= button_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link btn-primary' %>
+    <% else %>
+      <%= button_to "Login", new_user_session_path, :class => 'navbar-link btn-primary' %>
+    <% end %>
+  </div>
+</div>

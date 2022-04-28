@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
 
-  # root to: 'home#index'
-  root "users#new"
+  root 'pages#index'
+  # root "users#new"
 end
