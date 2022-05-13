@@ -1,0 +1,9 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+
+Style/Encoding:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 99
