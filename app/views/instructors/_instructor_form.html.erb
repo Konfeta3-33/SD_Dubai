@@ -1,0 +1,48 @@
+<%= render 'users/shared/errors', object: @instructor, class: 'btn btn-primary btn-lg' %>
+
+<%= link_to "Back", instructors_path, class: 'btn-primary navbar-link link-button' %>
+
+<%= form_with model: @instructor do |f| %>
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :name, class: 'col-sm-2 col-form-label' %>
+    </div>
+
+    <div class="col-sm-10">
+      <%= f.text_field :name, placeholder: "name", class: 'form-control form-control-lg', required: true %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :surname, class: 'col-sm-2 col-form-label' %>
+    </div>
+
+    <div class="col-sm-10">
+      <%= f.text_field :surname, placeholder: "surname", class: 'form-control form-control-lg', required: true %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :initials, class: 'col-sm-2 col-form-label' %>
+    </div>
+
+    <div class="col-sm-10">
+      <%= f.text_field :initials, placeholder: "initials", class: 'form-control
+      form-control-lg', required: true %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :license, class: 'col-sm-2 col-form-label' %>
+    </div>
+
+    <div class="col-sm-10">
+      <%= f.text_field :license, placeholder: "license", class: 'form-control form-control-lg', required: true %>
+    </div>
+  </div>
+
+  <%= f.submit 'Register', class: 'btn btn-primary btn-lg' %>
+<% end %>

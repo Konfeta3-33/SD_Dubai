@@ -1,9 +1,11 @@
-<div class="flex justify-center">
+<div class="flex justify-center flex-wrap">
   <% if user_signed_in? %>
+    <h5 class="text-2xl mb-4 w-full text-center">
+      Hello, <strong><%= current_user.login %></strong>!
+    </h5>
     <div>
-      <h5 class="text-2xl">
-        Hello, <strong><%= current_user.login %></strong>!
-      </h5>
+      <%= link_to 'Instructors', instructors_path, :class => 'navbar-link link-button' %>
+      <%= link_to 'Students', instructors_path, :class => 'navbar-link link-button' %>
     </div>
   <% else %>
     <%= form_for(:user, url: session_path(:user)) do |f| %>
