@@ -4,8 +4,8 @@
       Hello, <strong><%= current_user.login %></strong>!
     </h5>
     <div>
-      <%= link_to 'Instructors', instructors_path, :class => 'navbar-link link-button' %>
-      <%= link_to 'Students', instructors_path, :class => 'navbar-link link-button' %>
+      <%= link_to 'Instructors', instructors_path, :class => 'navbar-link link-button-blue' %>
+      <%= link_to 'Students', instructors_path, :class => 'navbar-link link-button-blue' %>
     </div>
   <% else %>
     <%= form_for(:user, url: session_path(:user)) do |f| %>
@@ -27,7 +27,7 @@
       <%# end %>
 
       <div class="actions">
-        <%= f.submit "Log in", class: "btn-primary cursor-pointer" %>
+        <%= f.submit "Log in", class: "btn btn-blue cursor-pointer" %>
       </div>
     <% end %>
   <% end %>

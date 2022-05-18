@@ -1,5 +1,6 @@
 class Instructor < ApplicationRecord
   has_one :user, as: :profile
 
-  validates :name, :license, :surname, :initials, presence: true, length: {minimum: 2}
+  validates :name, :license, :surname, presence: true
+  validates :initials, presence: true, length: {maximum: 3}
 end

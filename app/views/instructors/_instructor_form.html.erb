@@ -1,48 +1,67 @@
-<%= render 'users/shared/errors', object: @instructor, class: 'btn btn-primary btn-lg' %>
-
-<%= link_to "Back", instructors_path, class: 'btn-primary navbar-link link-button' %>
+<div class="mb-4">
+  <%= link_to "Back", instructors_path, class: 'link-button-blue' %>
+</div>
 
 <%= form_with model: @instructor do |f| %>
   <div class="mb-3 row">
-    <div class="col-sm-2 col-form-label">
-      <%= f.label :name, class: 'col-sm-2 col-form-label' %>
+    <div>
+      <%= f.label :name %>
     </div>
 
-    <div class="col-sm-10">
-      <%= f.text_field :name, placeholder: "name", class: 'form-control form-control-lg', required: true %>
+    <div>
+      <%= f.text_field :name, placeholder: "name", class: 'input', required: true %>
+    </div>
+    <% if @instructor.errors.include?(:name) %>
+      <div class="mt-1 text-red-600">
+        <%= @instructor.errors.full_messages_for(:name).join(", ") %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="mb-3 row">
+    <div>
+      <%= f.label :surname %>
+    </div>
+
+    <div>
+      <%= f.text_field :surname, placeholder: "surname", class: 'input', required: true %>
+      <% if @instructor.errors.include?(:surname) %>
+        <div class="mt-1 text-red-600">
+          <%= @instructor.errors.full_messages_for(:surname).join(", ") %>
+        </div>
+      <% end %>
     </div>
   </div>
 
   <div class="mb-3 row">
-    <div class="col-sm-2 col-form-label">
-      <%= f.label :surname, class: 'col-sm-2 col-form-label' %>
+    <div>
+      <%= f.label :initials %>
     </div>
 
-    <div class="col-sm-10">
-      <%= f.text_field :surname, placeholder: "surname", class: 'form-control form-control-lg', required: true %>
-    </div>
-  </div>
-
-  <div class="mb-3 row">
-    <div class="col-sm-2 col-form-label">
-      <%= f.label :initials, class: 'col-sm-2 col-form-label' %>
-    </div>
-
-    <div class="col-sm-10">
-      <%= f.text_field :initials, placeholder: "initials", class: 'form-control
-      form-control-lg', required: true %>
+    <div>
+      <%= f.text_field :initials, placeholder: "initials", class: 'input', required: true %>
+      <% if @instructor.errors.include?(:initials) %>
+        <div class="mt-1 text-red-600">
+          <%= @instructor.errors.full_messages_for(:initials).join(", ") %>
+        </div>
+      <% end %>
     </div>
   </div>
 
   <div class="mb-3 row">
-    <div class="col-sm-2 col-form-label">
-      <%= f.label :license, class: 'col-sm-2 col-form-label' %>
+    <div>
+      <%= f.label :license %>
     </div>
 
-    <div class="col-sm-10">
-      <%= f.text_field :license, placeholder: "license", class: 'form-control form-control-lg', required: true %>
+    <div>
+      <%= f.text_field :license, placeholder: "license", class: 'input', required: true %>
+      <% if @instructor.errors.include?(:license) %>
+        <div class="mt-1 text-red-600">
+          <%= @instructor.errors.full_messages_for(:license).join(", ") %>
+        </div>
+      <% end %>
     </div>
   </div>
 
-  <%= f.submit 'Register', class: 'btn btn-primary btn-lg' %>
+  <%= f.submit 'Register', class: 'btn btn-blue cursor-pointer' %>
 <% end %>

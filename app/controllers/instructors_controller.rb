@@ -12,10 +12,10 @@ class InstructorsController < ApplicationController
   def create
     @instructor = Instructor.new instructor_params
     if @instructor.save
-      flash[:notice] = "Create Instructor, #{@instructor.name} #{@instructor.surname}!"
+      flash[:notice] = "Created Instructor #{@instructor.name} #{@instructor.surname}!"
       redirect_to instructors_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
