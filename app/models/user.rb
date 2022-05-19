@@ -1,10 +1,11 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  validates :login, uniqueness: true
+  # TODO: enable Rails/UniqueValidationWithoutIndex
+  validates :login, uniqueness: true # rubocop:disable Rails/UniqueValidationWithoutIndex
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :authentication_keys => [:login]
+         :recoverable, :rememberable, :validatable, authentication_keys: [:login]
 
   def email_required?
     false

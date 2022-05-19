@@ -7,3 +7,19 @@ Style/Encoding:
 
 Layout/LineLength:
   Max: 99
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - test/**/*
