@@ -63,5 +63,38 @@
     </div>
   </div>
 
+  <%= f.fields_for :user_attributes do |user_fields| %>
+    <div class="mb-3 row">
+      <div>
+        <%= f.label :login %>
+      </div>
+
+      <div>
+        <%= user_fields.text_field :login, placeholder: "login for user", class: 'input', required: true %>
+        <% if @instructor.errors.include?(:login) %>
+          <div class="mt-1 text-red-600">
+            <%= @instructor.errors.full_messages_for(:login).join(", ") %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <div>
+        <%= f.label :password %>
+      </div>
+
+      <div>
+        <%= user_fields.password_field :password, placeholder: "password for user", class: 'input', required:
+          true %>
+        <% if @instructor.errors.include?('user.password') %>
+          <div class="mt-1 text-red-600">
+            <%= @instructor.errors.full_messages_for('user.password').join(", ") %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
   <%= f.submit 'Register', class: 'btn btn-blue cursor-pointer' %>
 <% end %>
