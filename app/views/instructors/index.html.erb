@@ -1,0 +1,31 @@
+<div class="flex justify-between">
+  <%= button_to "Back", user_session_path, class: 'btn btn-blue' %>
+  <%= link_to "Create Instructor", new_instructor_path, class: 'link-button-green' %>
+</div>
+<div>
+  <h2 class="mb-4 mt-4">Here will be All Instructors:</h2>
+  <table class="table-auto w-full border">
+    <thead>
+    <tr>
+      <th class="border-2 py-1 px-3">
+        Name, Surname
+      </th>
+      <th class="border-2 py-1 px-3">
+        License
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @instructors.each do |instructor| %>
+      <tr>
+        <td class="border-2 py-1 px-3">
+          <%= "#{instructor.name} #{instructor.surname}" %>
+        </td>
+        <td class="border-2 py-1 px-3">
+          <%= "#{instructor.license}" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

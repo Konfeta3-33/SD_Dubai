@@ -1,6 +1,11 @@
 class User < ApplicationRecord
+  belongs_to :profile, polymorphic: true
+
+  validates :login, uniqueness: true
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
   # TODO: enable Rails/UniqueValidationWithoutIndex
   validates :login, uniqueness: true # rubocop:disable Rails/UniqueValidationWithoutIndex
 
