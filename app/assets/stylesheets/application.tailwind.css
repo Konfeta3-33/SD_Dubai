@@ -2,12 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-    .btn-primary {
-        @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+@layer base {
+    .btn {
+        @apply py-2 px-4 rounded-lg shadow-md font-semibold;
+    }
+
+    .btn-blue {
+        @apply bg-blue-500 text-white;
+    }
+
+    .btn-blue:focus {
+        @apply outline-none ring-2 ring-opacity-75 ring-blue-400
+    }
+
+    .btn-blue:hover {
+        @apply bg-blue-700
+    }
+
+    .btn-green {
+        @apply py-2 px-4 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75 bg-green-500 hover:bg-green-700 focus:ring-green-400 shadow-md;
+    }
+
+    .link-button-blue {
+        @apply py-3 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+    }
+
+    .link-button-green {
+        @apply py-3 px-4 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
     }
 
     .container {
-        @apply my-0 m-auto px-20
+        @apply my-0 m-auto px-20;
+    }
+
+    .input {
+        @apply rounded-md;
     }
 }

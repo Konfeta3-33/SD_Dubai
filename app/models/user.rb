@@ -1,7 +1,10 @@
 class User < ApplicationRecord
+  belongs_to :profile, polymorphic: true
+
+  validates :login, uniqueness: true
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  validates :login, uniqueness: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :authentication_keys => [:login]

@@ -1,0 +1,100 @@
+<div class="mb-4">
+  <%= link_to "Back", instructors_path, class: 'link-button-blue' %>
+</div>
+
+<%= form_with model: @instructor do |f| %>
+  <div class="mb-3 row">
+    <div>
+      <%= f.label :name %>
+    </div>
+
+    <div>
+      <%= f.text_field :name, placeholder: "name", class: 'input', required: true %>
+    </div>
+    <% if @instructor.errors.include?(:name) %>
+      <div class="mt-1 text-red-600">
+        <%= @instructor.errors.full_messages_for(:name).join(", ") %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="mb-3 row">
+    <div>
+      <%= f.label :surname %>
+    </div>
+
+    <div>
+      <%= f.text_field :surname, placeholder: "surname", class: 'input', required: true %>
+      <% if @instructor.errors.include?(:surname) %>
+        <div class="mt-1 text-red-600">
+          <%= @instructor.errors.full_messages_for(:surname).join(", ") %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <div>
+      <%= f.label :initials %>
+    </div>
+
+    <div>
+      <%= f.text_field :initials, placeholder: "initials", class: 'input', required: true %>
+      <% if @instructor.errors.include?(:initials) %>
+        <div class="mt-1 text-red-600">
+          <%= @instructor.errors.full_messages_for(:initials).join(", ") %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <div>
+      <%= f.label :license %>
+    </div>
+
+    <div>
+      <%= f.text_field :license, placeholder: "license", class: 'input', required: true %>
+      <% if @instructor.errors.include?(:license) %>
+        <div class="mt-1 text-red-600">
+          <%= @instructor.errors.full_messages_for(:license).join(", ") %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <%= f.fields_for :user_attributes do |user_fields| %>
+    <div class="mb-3 row">
+      <div>
+        <%= f.label :login %>
+      </div>
+
+      <div>
+        <%= user_fields.text_field :login, placeholder: "login for user", class: 'input', required: true %>
+        <% if @instructor.errors.include?(:login) %>
+          <div class="mt-1 text-red-600">
+            <%= @instructor.errors.full_messages_for(:login).join(", ") %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <div>
+        <%= f.label :password %>
+      </div>
+
+      <div>
+        <%= user_fields.password_field :password, placeholder: "password for user", class: 'input', required:
+          true %>
+        <% if @instructor.errors.include?('user.password') %>
+          <div class="mt-1 text-red-600">
+            <%= @instructor.errors.full_messages_for('user.password').join(", ") %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <%= f.submit 'Register', class: 'btn btn-blue cursor-pointer' %>
+<% end %>
