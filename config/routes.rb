@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
 
   resources :instructors
+  resources :students
 
   root 'pages#index'
   # root "users#new"

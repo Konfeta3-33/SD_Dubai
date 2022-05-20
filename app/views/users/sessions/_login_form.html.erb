@@ -4,8 +4,8 @@
       Hello, <strong><%= current_user.login %></strong>!
     </h5>
     <div>
-      <%= link_to 'Instructors', instructors_path, :class => 'navbar-link link-button-blue' %>
-      <%= link_to 'Students', instructors_path, :class => 'navbar-link link-button-blue' %>
+      <%= link_to 'Instructors', instructors_path, :class => 'link-button-blue' %>
+      <%= link_to 'Students', students_path, :class => 'link-button-blue' %>
     </div>
   <% else %>
     <%= form_for(:user, url: session_path(:user)) do |f| %>
