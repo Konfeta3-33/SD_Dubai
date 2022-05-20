@@ -31,3 +31,6 @@ Bundler/OrderedGems:
 Style/ClassAndModuleChildren:
   Exclude:
     - test/**/*
+
+Style/SymbolArray:
+  Enabled: false
