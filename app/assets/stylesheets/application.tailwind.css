@@ -16,19 +16,23 @@
     }
 
     .btn-blue:hover {
-        @apply bg-blue-700
+        @apply bg-blue-700 text-white
     }
 
     .btn-green {
-        @apply py-2 px-4 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75 bg-green-500 hover:bg-green-700 focus:ring-green-400 shadow-md;
+        @apply py-2 px-4 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75 bg-green-500 hover:bg-green-700 hover:text-white focus:ring-green-400 shadow-md;
     }
 
     .link-button-blue {
-        @apply py-3 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+        @apply py-3 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
     }
 
     .link-button-green {
-        @apply py-3 px-4 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+        @apply py-3 px-4 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+    }
+
+    .link-button-green-reverse {
+        @apply py-3 px-4 text-green-500 font-semibold rounded-lg shadow-md hover:bg-green-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
     }
 
     .container {
@@ -50,5 +54,9 @@
 
     h3 {
         @apply text-lg
+    }
+
+    a:hover {
+        @apply text-green-500
     }
 }

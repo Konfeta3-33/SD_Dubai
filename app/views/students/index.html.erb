@@ -25,7 +25,9 @@
     <% @students.each do |student| %>
       <tr>
         <td class="border-2 py-1 px-3">
-          <%= "#{student.name} #{student.surname}" %>
+          <%= link_to student_path(student) do %>
+            <%= "#{student.name} #{student.surname}" %>
+          <% end %>
         </td>
         <td class="border-2 py-1 px-3">
           <%= "#{student.updated_at}" %>

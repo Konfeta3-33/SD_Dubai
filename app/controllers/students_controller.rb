@@ -3,6 +3,11 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
+  def show
+    @students = Student.all
+    @student = Student.find(params[:id])
+  end
+
   def new
     @student = Student.new
   end
@@ -14,6 +19,12 @@ class StudentsController < ApplicationController
       redirect_to students_path
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    if @student.update student_params
+
     end
   end
 

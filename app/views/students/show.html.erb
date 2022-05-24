@@ -1,0 +1,59 @@
+<div class="flex justify-between">
+  <%= link_to "Back", students_path, class: 'btn btn-blue' %>
+</div>
+
+<h2>Student Info</h2>
+
+<div class="rounded-md border px-5 py-5 flex">
+  <div class="rounded-md border w-28 h-40 text-center align-middle py-3 mr-6">
+    Here will be photo
+  </div>
+
+  <div class="flex flex-wrap w-full">
+
+    <div class="flex justify-between w-full mb-3">
+      <div>
+        ID №: <strong><%= @student.id %></strong>
+      </div>
+      <div>
+        <%= link_to "Log Book", students_path, class: 'btn btn-green' %>
+      </div>
+    </div>
+
+    <div class="flex w-full mb-3">
+      <div class="mr-14">
+        Name: <strong><%= @student.name %></strong>
+      </div>
+      <div>
+        Surname: <strong><%= @student.surname %></strong>
+      </div>
+    </div>
+
+    <div class="flex w-full mb-3">
+      <div class="mr-14">
+        Phone: <strong><%= @student.phone %></strong>
+      </div>
+      <div>
+        Email: <strong><%= @student.email %></strong>
+      </div>
+    </div>
+
+    <div class="w-full mb-3">
+      Birthday: <strong><%= @student.birthday&.strftime('%b %d, %Y') || "—" %></strong>
+    </div>
+
+    <div class="flex w-full mb-3 flex-wrap">
+      <div class="mr-14">
+        Country: <strong><%= @student.country.presence || "—" %></strong>
+      </div>
+      <div>
+        City: <strong><%= @student.city.presence || "—" %></strong>
+      </div>
+    </div>
+
+    <div class="w-full mb-3 flex-wrap">
+      Address: <strong><%= @student.address.presence || "—" %></strong>
+    </div>
+    <%= link_to "Edit Student", edit_student_path, class: 'link-button-green-reverse' %>
+  </div>
+</div>
