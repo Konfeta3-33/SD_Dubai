@@ -34,3 +34,7 @@ Style/ClassAndModuleChildren:
 
 Style/SymbolArray:
   Enabled: false
+
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/*
