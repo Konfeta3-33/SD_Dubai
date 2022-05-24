@@ -1,0 +1,41 @@
+<div class="flex justify-between">
+  <%= button_to "Back", user_session_path, class: 'btn btn-blue' %>
+  <%= link_to "Create Student", new_student_path, class: 'link-button-green' %>
+</div>
+<div>
+  <h2 class="mb-4 mt-4">Here will be All Srudents:</h2>
+  <table class="table-auto w-full border">
+    <thead>
+    <tr>
+      <th class="border-2 py-1 px-3">
+        Name, Surname
+      </th>
+      <th class="border-2 py-1 px-3">
+        Date update
+      </th>
+      <th class="border-2 py-1 px-3">
+        ID Number
+      </th>
+      <th class="border-2 py-1 px-3">
+        Type
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td class="border-2 py-1 px-3">
+          <%= "#{student.name} #{student.surname}" %>
+        </td>
+        <td class="border-2 py-1 px-3">
+          <%= "#{student.updated_at}" %>
+        </td>
+        <td class="border-2 py-1 px-3">
+          <%= "#{student.id}" %>
+        </td>
+        <td class="border-2 py-1 px-3">Cat. B</td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
