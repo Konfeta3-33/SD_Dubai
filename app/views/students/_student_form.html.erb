@@ -127,5 +127,10 @@
     </div>
   </div>
 
-  <%= f.submit 'Save', class: 'btn btn-green cursor-pointer' %>
+  <div class="flex justify-between w-full mb-6">
+    <%= f.submit 'Save', class: 'btn btn-green cursor-pointer' %>
+    <% unless @student.new_record? %>
+      <%= link_to 'Delete', student_path(@student), data: { 'turbo-method': :delete, 'turbo-confirm': "Are you sure?" }, class: 'btn btn-red' %>
+    <% end %>
+  </div>
 <% end %>
