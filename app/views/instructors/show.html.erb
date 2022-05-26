@@ -1,0 +1,31 @@
+<div class="mb-4">
+  <%= link_to "Back", instructors_path, class: 'link-button-blue' %>
+</div>
+
+<h2 class="text-center font-bold mb-4 text-slate-600">Here will be Instructor info</h2>
+
+<figure class="rounded-xl p-4 border grid md:grid-cols-[min-content_1fr] gap-5">
+  <div class="w-28 h-40 md:w-28 md:h-40 md:rounded-md rounded-full mx-auto my-auto border
+  text-center p-4">
+    Here will be photo
+  </div>
+  <div class="text-center md:text-left grid grid-cols-2">
+    <div>
+      Name: <strong><%= @instructor.name %></strong>
+    </div>
+    <div>
+      Surname: <strong><%= @instructor.surname %></strong>
+    </div>
+    <div>
+      Initials: <strong><%= @instructor.initials %></strong>
+    </div>
+    <div>
+      License: <strong><%= @instructor.license %></strong>
+    </div>
+    <div class="col-span-2">
+      Login: <strong><%= @instructor.user&.login.presence || "—" %></strong>
+    </div>
+    <%= link_to "Edit", edit_instructor_path(@instructor), class: "link-button-green-reverse
+    col-start-2" %>
+  </div>
+</figure>

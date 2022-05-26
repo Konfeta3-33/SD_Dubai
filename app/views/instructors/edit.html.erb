@@ -1,0 +1,8 @@
+<div class="mb-6">
+  <%= link_to "Back", instructors_path, class: 'link-button-blue' %>
+</div>
+
+<h2 class="mb-4 text-center font-bold text-slate-600">Edit instructor <%= "#{@instructor.name}
+                                                                          #{@instructor.surname}" %></h2>
+
+<%= render 'instructor_form' %>

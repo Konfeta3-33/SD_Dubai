@@ -19,7 +19,9 @@
     <% @instructors.each do |instructor| %>
       <tr>
         <td class="border-2 py-1 px-3">
-          <%= "#{instructor.name} #{instructor.surname}" %>
+          <%= link_to instructor do %>
+            <%= "#{instructor.name} #{instructor.surname}" %>
+          <% end %>
         </td>
         <td class="border-2 py-1 px-3">
           <%= "#{instructor.license}" %>
