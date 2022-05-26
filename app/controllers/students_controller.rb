@@ -35,11 +35,9 @@ class StudentsController < ApplicationController
   end
 
   def destroy
-    if @student.destroy
-      redirect_to students_path
-    else
-    end
-    # flash[:notice] = "Student #{@student.name} #{@student.surname} deleted!"
+    @student.destroy
+    redirect_to students_path, status: :see_other
+    flash[:alert] = "Student #{@student.name} #{@student.surname} deleted!"
   end
 
   private
