@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  before_action :set_student!, only: %i[show edit update destroy]
+  before_action :set_student, only: %i[show edit update destroy]
 
   def index
     @students = Student.all
@@ -35,18 +35,27 @@ class StudentsController < ApplicationController
   end
 
   def destroy
-    @student.destroy
+    @student.destroy!
     redirect_to students_path, status: :see_other
     flash[:alert] = "Student #{@student.name} #{@student.surname} deleted!"
   end
 
   private
 
-  def set_student!
+  def set_student
     @student = Student.find(params[:id])
   end
 
   def student_params
-    params.require(:student).permit(:name, :surname, :phone, :email, :birthday, :country, :city, :address)
+    params.require(:student).permit(
+      :name,
+      :surname,
+      :phone,
+      :email,
+      :birthday,
+      :country,
+      :city,
+      :address
+    )
   end
 end
