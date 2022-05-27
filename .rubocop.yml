@@ -31,7 +31,6 @@ Bundler/OrderedGems:
 Style/ClassAndModuleChildren:
   Exclude:
     - test/**/*
-  EnforcedStyle: compact
 
 Style/SymbolArray:
   Enabled: false
