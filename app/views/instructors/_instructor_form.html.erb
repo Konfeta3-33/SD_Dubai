@@ -63,44 +63,14 @@
     </div>
   </div>
 
-  <%= f.fields_for :user_attributes do |user_fields| %>
-    <div class="flex justify-between mb-3">
-      <div class="mb-3 row">
-        <div>
-          <%= f.label :login %>
-        </div>
-
-        <div>
-          <%= user_fields.text_field :login, placeholder: "login for user", class: 'input', required: true %>
-          <% if @instructor.errors.include?(:login) %>
-            <div class="mt-1 text-red-600">
-              <%= @instructor.errors.full_messages_for(:login).join(", ") %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="mb-3 row">
-        <div>
-          <%= f.label :password %>
-        </div>
-
-        <div>
-          <%= user_fields.password_field :password, placeholder: "password for user", class: 'input', required:
-            true %>
-          <% if @instructor.errors.include?('user.password') %>
-            <div class="mt-1 text-red-600">
-              <%= @instructor.errors.full_messages_for('user.password').join(", ") %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
+  <% if @instructor.new_record? %>
+    <%= render 'instructors/credentials/credentials_form', form: f %>
   <% end %>
 
-  <%= f.submit 'Save', class: 'btn btn-green cursor-pointer' %>
-  <% unless @instructor.new_record?%>
-    <%= button_to "Delete", @instructor, method: :delete %>
-    <%#= link_to 'Delete', @instructor, data: {'turbo-method': :delete, 'turbo-confirm': "Are you sure?"}, class: "btn btn-red cursor-pointer" %>
-  <% end %>
+  <div class="flex justify-between">
+    <%= f.submit 'Save', class: 'btn btn-green cursor-pointer' %>
+    <% unless @instructor.new_record? %>
+      <%= button_to "Delete", @instructor, method: :delete %>
+    <% end %>
+  </div>
 <% end %>
