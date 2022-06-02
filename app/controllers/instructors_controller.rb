@@ -37,9 +37,12 @@ class InstructorsController < ApplicationController
   end
 
   def destroy
-    @instructor.destroy
-    redirect_to instructors_path, status: :see_other
-    flash[:alert] = "Instructor #{@instructor.name} #{@instructor.surname} deleted!"
+    if @instructor.destroy
+      redirect_to instructors_path, status: :see_other
+      flash[:alert] = "Instructor #{@instructor.name} #{@instructor.surname} deleted!"
+    else
+      render file: 'public/404.html', status: :not_found
+    end
   end
 
   private
