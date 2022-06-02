@@ -46,7 +46,9 @@
       Address: <strong><%= @student.address.presence || "—" %></strong>
     </div>
 
-    <%= link_to "Edit Student", edit_student_path, class: 'link-button-green-reverse col-start-2
+    <% if policy(@student).edit? %>
+      <%= link_to "Edit Student", edit_student_path, class: 'link-button-green-reverse col-start-2
     w-fit justify-self-end' %>
+    <% end %>
   </div>
 </div>

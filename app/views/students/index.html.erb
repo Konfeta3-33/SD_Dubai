@@ -1,9 +1,11 @@
 <div class="flex justify-between">
   <%= button_to "Back", user_session_path, class: 'btn btn-blue' %>
-  <%= link_to "Create Student", new_student_path, class: 'link-button-green' %>
+  <% if policy(Student).create? %>
+    <%= link_to "Create Student", new_student_path, class: 'link-button-green' %>
+  <% end %>
 </div>
 <div>
-  <h2 class="mb-4 mt-4">Here will be All Srudents:</h2>
+  <h2 class="mb-4 mt-4">Students:</h2>
   <table class="table-auto w-full border">
     <thead>
     <tr>
