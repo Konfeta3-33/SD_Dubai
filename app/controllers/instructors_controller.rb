@@ -41,7 +41,8 @@ class InstructorsController < ApplicationController
       redirect_to instructors_path, status: :see_other
       flash[:alert] = "Instructor #{@instructor.name} #{@instructor.surname} deleted!"
     else
-      render file: 'public/404.html', status: :not_found
+      render :edit, status: :unprocessable_entity
+      flash[:alert] = "Instructor #{@instructor.name} #{@instructor.surname} has not been deleted!"
     end
   end
 
