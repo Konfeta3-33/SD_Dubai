@@ -1,14 +1,15 @@
 class InstructorsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_instructor, only: %i[show edit destroy]
+  before_action :set_instructor, only: %i[show edit update destroy]
 
   def index
+    authorize Instructor
     @instructors = Instructor.all
   end
 
   def new
     @instructor = Instructor.new
     @instructor.build_user
+    authorize @instructor
   end
 
   def show
@@ -19,6 +20,7 @@ class InstructorsController < ApplicationController
 
   def create
     @instructor = Instructor.new instructor_params
+    authorize @instructor
     if @instructor.save
       flash[:notice] = "Created Instructor #{@instructor.name} #{@instructor.surname}!"
       redirect_to instructors_path
@@ -28,6 +30,7 @@ class InstructorsController < ApplicationController
   end
 
   def update
+    authorize @instructor
     if @instructor.update instructor_params
       flash[:notice] = "Instructor #{@instructor.name} #{@instructor.surname} updated!"
       redirect_to instructor_path
@@ -37,6 +40,7 @@ class InstructorsController < ApplicationController
   end
 
   def destroy
+    authorize @instructor
     if @instructor.destroy
       redirect_to instructors_path, status: :see_other
       flash[:alert] = "Instructor #{@instructor.name} #{@instructor.surname} deleted!"

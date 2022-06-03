@@ -22,8 +22,10 @@
     <div>
       License: <strong><%= @instructor.license %></strong>
     </div>
-    <%= link_to "Edit", edit_instructor_path(@instructor), class: "link-button-green-reverse
-    col-start-2" %>
+    <% if policy(@instructor).edit? %>
+      <%= link_to "Edit", edit_instructor_path(@instructor), class: "link-button-green-reverse
+    col-start-2 w-fit justify-self-end h-auto self-end" %>
+    <% end %>
   </div>
 </figure>
 
@@ -36,7 +38,8 @@
   <div>
     Password: <strong><%= @instructor.user&.password.presence || "—" %></strong>
   </div>
-  <%= link_to "Edit", edit_instructor_credentials_path(@instructor), class:
-    "link-button-green-reverse
-    col-start-2" %>
+  <% if policy(@instructor).edit? %>
+    <%= link_to "Edit", edit_instructor_credentials_path(@instructor), class:
+      "link-button-green-reverse col-start-2 w-fit justify-self-end" %>
+  <% end %>
 </figure>

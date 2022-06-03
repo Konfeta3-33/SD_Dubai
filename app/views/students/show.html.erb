@@ -4,7 +4,7 @@
 
 <h2 class="font-bold text-center mb-4 text-slate-600">Student Info</h2>
 
-<div class="rounded-md border px-5 py-5 grid grid-cols-[min-content_1fr] gap-5">
+<div class="rounded-md border px-5 py-5 grid grid-cols-[min-content_1fr] gap-4">
   <div class="rounded-md border w-28 h-40 text-center align-middle py-3">
     Here will be photo
   </div>
@@ -47,7 +47,7 @@
     </div>
 
     <% if policy(@student).edit? %>
-      <%= link_to "Edit Student", edit_student_path, class: 'link-button-green-reverse col-start-2
+      <%= link_to "Edit", edit_student_path, class: 'link-button-green-reverse col-start-2
     w-fit justify-self-end' %>
     <% end %>
   </div>
