@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
   before_action :set_student, only: %i[show edit update destroy]
 
   def index
+    authorize Student
     @students = Student.all
   end
 
@@ -10,6 +11,7 @@ class StudentsController < ApplicationController
 
   def new
     @student = Student.new
+    authorize @student
   end
 
   def edit
@@ -17,6 +19,7 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new student_params
+    authorize @student
     if @student.save
       flash[:notice] = "Created Student #{@student.name} #{@student.surname}!"
       redirect_to students_path
@@ -26,6 +29,7 @@ class StudentsController < ApplicationController
   end
 
   def update
+    authorize @student
     if @student.update student_params
       flash[:notice] = "Student #{@student.name} #{@student.surname} update!"
       redirect_to student_path
@@ -35,6 +39,7 @@ class StudentsController < ApplicationController
   end
 
   def destroy
+    authorize @student
     @student.destroy!
     redirect_to students_path, status: :see_other
     flash[:alert] = "Student #{@student.name} #{@student.surname} deleted!"

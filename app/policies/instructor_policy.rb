@@ -1,0 +1,2 @@
+class InstructorPolicy < ApplicationPolicy
+end
