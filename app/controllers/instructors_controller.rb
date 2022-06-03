@@ -1,5 +1,6 @@
 class InstructorsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_instructor, only: %i[show edit destroy]
 
   def index
     @instructors = Instructor.all
@@ -7,6 +8,13 @@ class InstructorsController < ApplicationController
 
   def new
     @instructor = Instructor.new
+    @instructor.build_user
+  end
+
+  def show
+  end
+
+  def edit
   end
 
   def create
@@ -19,7 +27,30 @@ class InstructorsController < ApplicationController
     end
   end
 
+  def update
+    if @instructor.update instructor_params
+      flash[:notice] = "Instructor #{@instructor.name} #{@instructor.surname} updated!"
+      redirect_to instructor_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    if @instructor.destroy
+      redirect_to instructors_path, status: :see_other
+      flash[:alert] = "Instructor #{@instructor.name} #{@instructor.surname} deleted!"
+    else
+      render :edit, status: :unprocessable_entity
+      flash[:alert] = "Instructor #{@instructor.name} #{@instructor.surname} has not been deleted!"
+    end
+  end
+
   private
+
+  def set_instructor
+    @instructor = Instructor.find(params[:id])
+  end
 
   def instructor_params
     params.require(:instructor).permit(
