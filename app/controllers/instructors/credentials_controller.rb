@@ -3,6 +3,7 @@ module Instructors
     before_action :set_instructor
 
     def edit
+      @instructor.build_user unless @instructor.user
     end
 
     def update

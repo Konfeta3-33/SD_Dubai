@@ -1,8 +1,8 @@
-<div class="flex justify-between my-7">
+<div class="flex my-7 justify-center border-b-2 border-gray-500 pb-6">
   <%= link_to root_path do %>
-    <img src="<%= asset_path('logo.png') %>" alt="Skydive Dubai">
+    <img src="<%= asset_path('logo.png') %>" alt="Skydive Dubai" width="300" height="300">
   <% end %>
-  <div class="navbar-text flex justify-between items-center">
+  <div class="navbar-text flex items-center place-self-end">
     <% if user_signed_in? %>
       <div class="mr-6">
         Logged in as <strong><%= current_user.login %></strong>

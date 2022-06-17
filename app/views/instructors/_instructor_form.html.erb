@@ -68,9 +68,14 @@
   <% end %>
 
   <div class="flex justify-between">
-    <%= f.submit 'Save', class: 'btn btn-green cursor-pointer' %>
-    <% unless @instructor.new_record? %>
-      <%= button_to "Delete", @instructor, method: :delete %>
+    <% if policy(@instructor).edit? %>
+      <%= f.submit 'Save', class: 'btn btn-green cursor-pointer' %>
+    <% end %>
+    <% if policy(@instructor).destroy? %>
+      <% unless @instructor.new_record? %>
+        <%= link_to "Delete", @instructor, method: :delete, class: "btn-red", data: { confirm: "Are you
+                                                                                        sure?" } %>
+      <% end %>
     <% end %>
   </div>
 <% end %>
