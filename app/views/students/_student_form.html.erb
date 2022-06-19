@@ -1,14 +1,9 @@
 <%= form_with model: @student do |f| %>
-  <div class="flex flex-wrap">
-    <div class="flex w-full justify-between">
-      <div class="mb-3">
-        <div>
-          <%= f.label :name %>
-        </div>
-
-        <div>
-          <%= f.text_field :name, placeholder: "name", class: 'input', required: true %>
-        </div>
+  <div class="flex flex-wrap mb-6">
+    <div class="flex w-full justify-between mb-4">
+      <div class="flex-1 flex flex-col mr-4">
+        <%= f.label :name %>
+        <%= f.text_field :name, placeholder: "name", class: 'input', required: true %>
         <% if @student.errors.include?(:name) %>
           <div class="mt-1 text-red-600">
             <%= @student.errors.full_messages_for(:name).join(", ") %>
@@ -16,123 +11,92 @@
         <% end %>
       </div>
 
-      <div class="mb-3">
-        <div>
-          <%= f.label :surname %>
-        </div>
-
-        <div>
-          <%= f.text_field :surname, placeholder: "surname", class: 'input', required: true %>
-          <% if @student.errors.include?(:surname) %>
-            <div class="mt-1 text-red-600">
-              <%= @student.errors.full_messages_for(:surname).join(", ") %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
-    <div class="flex w-full justify-between">
-      <div class="mb-3">
-        <div>
-          <%= f.label :email %>
-        </div>
-
-        <div>
-          <%= f.email_field :email, placeholder: "email", class: 'input', required: true %>
-          <% if @student.errors.include?(:email) %>
-            <div class="mt-1 text-red-600">
-              <%= @student.errors.full_messages_for(:email).join(", ") %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="mb-3">
-        <div>
-          <%= f.label :phone %>
-        </div>
-
-        <div>
-          <%= f.phone_field :phone, placeholder: "phone number", class: 'input', required: true %>
-          <% if @student.errors.include?(:phone) %>
-            <div class="mt-1 text-red-600">
-              <%= @student.errors.full_messages_for(:phone).join(", ") %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
-    <div class="mb-3">
-      <div>
-        <%= f.label :birthday %>
-      </div>
-
-      <div>
-        <%= f.date_field :birthday, placeholder: "birthday", class: 'input' %>
-        <% if @student.errors.include?(:birthday) %>
+      <div class="flex-1 flex flex-col">
+        <%= f.label :surname %>
+        <%= f.text_field :surname, placeholder: "surname", class: 'input', required: true %>
+        <% if @student.errors.include?(:surname) %>
           <div class="mt-1 text-red-600">
-            <%= @student.errors.full_messages_for(:birthday).join(", ") %>
+            <%= @student.errors.full_messages_for(:surname).join(", ") %>
           </div>
         <% end %>
       </div>
     </div>
 
-    <div class="flex w-full justify-between">
-      <div class="mb-3">
-        <div>
-          <%= f.label :country %>
-        </div>
-
-        <div>
-          <%= f.text_field :country, placeholder: "country", class: 'input' %>
-          <% if @student.errors.include?(:country) %>
-            <div class="mt-1 text-red-600">
-              <%= @student.errors.full_messages_for(:country).join(", ") %>
-            </div>
-          <% end %>
-        </div>
+    <div class="flex w-full justify-between mb-4">
+      <div class="flex-1 flex flex-col mr-4">
+        <%= f.label :email %>
+        <%= f.email_field :email, placeholder: "email", class: 'input', required: true %>
+        <% if @student.errors.include?(:email) %>
+          <div class="mt-1 text-red-600">
+            <%= @student.errors.full_messages_for(:email).join(", ") %>
+          </div>
+        <% end %>
       </div>
 
-      <div class="mb-3">
-        <div>
-          <%= f.label :city %>
-        </div>
+      <div class="flex-1 flex flex-col">
+        <%= f.label :phone %>
+        <%= f.phone_field :phone, placeholder: "phone number", class: 'input', required: true %>
+        <% if @student.errors.include?(:phone) %>
+          <div class="mt-1 text-red-600">
+            <%= @student.errors.full_messages_for(:phone).join(", ") %>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
-        <div>
-          <%= f.text_field :city, placeholder: "city", class: 'input' %>
-          <% if @student.errors.include?(:city) %>
-            <div class="mt-1 text-red-600">
-              <%= @student.errors.full_messages_for(:city).join(", ") %>
-            </div>
-          <% end %>
+    <div class="mb-4 flex flex-col">
+      <%= f.label :birthday %>
+      <%= f.date_field :birthday, placeholder: "birthday", class: 'input' %>
+      <% if @student.errors.include?(:birthday) %>
+        <div class="mt-1 text-red-600">
+          <%= @student.errors.full_messages_for(:birthday).join(", ") %>
         </div>
+      <% end %>
+    </div>
+
+    <div class="mb-4 flex w-full justify-between">
+      <div class="flex-1 flex flex-col mr-4">
+        <%= f.label :country %>
+        <%= f.text_field :country, placeholder: "country", class: 'input' %>
+        <% if @student.errors.include?(:country) %>
+          <div class="mt-1 text-red-600">
+            <%= @student.errors.full_messages_for(:country).join(", ") %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="flex flex-col flex-1">
+        <%= f.label :city %>
+        <%= f.text_field :city, placeholder: "city", class: 'input' %>
+        <% if @student.errors.include?(:city) %>
+          <div class="mt-1 text-red-600">
+            <%= @student.errors.full_messages_for(:city).join(", ") %>
+          </div>
+        <% end %>
       </div>
     </div>
 
     <div class="mb-3 w-full">
-      <div>
-        <%= f.label :address %>
-      </div>
-
-      <div>
-        <%= f.text_field :address, placeholder: "address", class: 'input w-full' %>
-        <% if @student.errors.include?(:address) %>
-          <div class="mt-1 text-red-600">
-            <%= @student.errors.full_messages_for(:address).join(", ") %>
-          </div>
-        <% end %>
-      </div>
+      <%= f.label :address %>
+      <%= f.text_field :address, placeholder: "address", class: 'input w-full' %>
+      <% if @student.errors.include?(:address) %>
+        <div class="mt-1 text-red-600">
+          <%= @student.errors.full_messages_for(:address).join(", ") %>
+        </div>
+      <% end %>
     </div>
   </div>
 
   <div class="flex justify-between w-full mb-6">
-    <%= f.submit 'Save', class: 'btn btn-green cursor-pointer' %>
     <% unless @student.new_record? %>
       <% if policy(@student).destroy? %>
-        <%= link_to 'Delete', student_path(@student), data: { 'turbo-method': :delete, 'turbo-confirm': "Are you sure?" }, class: 'btn btn-red' %>
+        <%= link_to 'Delete',
+                    student_path(@student),
+                    data: { 'turbo-method': :delete, 'turbo-confirm': "Are you sure?" },
+                    class: 'btn btn-red' %>
       <% end %>
     <% end %>
+
+    <%= f.submit 'Save', class: 'btn btn-green cursor-pointer' %>
   </div>
 <% end %>
