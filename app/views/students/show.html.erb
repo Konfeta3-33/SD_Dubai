@@ -1,5 +1,5 @@
 <div class="flex justify-between">
-  <%= link_to "Back", students_path, class: 'btn btn-blue mb-4' %>
+  <%= link_to "Back", students_path, class: 'btn btn-default mb-4' %>
 </div>
 
 <h2 class="font-bold text-center mb-4 text-slate-600">Student Info</h2>
@@ -14,7 +14,7 @@
       ID №: <strong><%= @student.id %></strong>
     </div>
     <div class="justify-self-end">
-      <%= link_to "Log Book", students_path, class: 'btn btn-green' %>
+      <%= link_to "Log Book", student_logbook_path(@student), class: 'btn btn-green' %>
     </div>
 
     <div>

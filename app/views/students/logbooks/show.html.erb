@@ -1,0 +1,35 @@
+<div class="text-center font-bold mb-4">
+  Logbook: <%= @student.full_name %>
+</div>
+<div class="flex">
+  <aside class="w-64 sidebar">
+    <div class="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
+      <ul class="space-y-2">
+        <% @logbook.course_levels.each do |level| %>
+          <li>
+            <% link_classes = [
+              ('pl-7' unless %i[current passed].include?(level[:status])),
+              ('svg-gray' if level[:status] == :passed)
+            ].compact %>
+            <a class="flex px-3 py-2 items-center <%= link_classes.join(' ') %>" href="#">
+              <% if level[:status] == :current %>
+                <%= svg('arrow-right') %>
+              <% elsif level[:status] == :passed %>
+                <%= svg('check') %>
+              <% end %>
+              &nbsp;
+              <span><%= level[:name] %></span>
+              &nbsp;
+              <% if level[:status] == :skipped %>
+                <span class="text-gray-500">(skipped)</span>
+              <% end %>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </aside>
+  <main class="p-4">
+    <h2>Form coming soon</h2>
+  </main>
+</div>

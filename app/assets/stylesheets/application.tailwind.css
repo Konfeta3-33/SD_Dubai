@@ -4,7 +4,11 @@
 
 @layer components {
     .btn {
-        @apply py-2 px-4 rounded-lg shadow-md font-semibold;
+        @apply py-2 px-4 rounded-lg font-semibold;
+    }
+
+    .btn-default {
+        @apply border-2 border-gray-200;
     }
 
     .btn-blue {
@@ -62,5 +66,10 @@
 
     a:hover {
         @apply text-green-500
+    }
+
+    svg {
+        height: 1em;
+        width: 1em;
     }
 }
