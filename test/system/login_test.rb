@@ -18,4 +18,22 @@ class LoginTest < ApplicationSystemTestCase
 
     assert_content 'Logged in as ivan'
   end
+
+  test 'login with invalid credentials' do
+    login = 'ivan'
+    password = password_confirmation = 'P@ssw0rd'
+    Instructor.create! \
+      name: 'Ivan',
+      surname: 'Peterson',
+      initials: 'IP',
+      license: 'D-111111',
+      user_attributes: { login:, password:, password_confirmation: }
+
+    visit root_path
+    fill_in :user_login, with: login
+    fill_in :user_password, with: 'INVALID PASSWORD'
+    click_button 'Log in'
+
+    assert_content 'Invalid Login or password'
+  end
 end
