@@ -1,0 +1,28 @@
+<div class="text-center text-2xl tracking-widest font-medium mb-6">
+  DOCUMENTATION
+  <p class="font-bold">AFF STUDENT LOGBOOK</p>
+  <span class="text-red-600">SKYDIVE</span> DUBAI DESERT DZ
+</div>
+
+<h3 class="text-center mb-4">
+  If you have login and password, please enter its bellow:
+</h3>
+
+<div class="flex justify-center flex-wrap">
+
+  <%= form_for(:user, url: session_path(:user)) do |f| %>
+    <div class="field mb-4">
+      <%= f.label :login %><br/>
+      <%= f.text_field :login, autofocus: true, autocomplete: "login" %>
+    </div>
+
+    <div class="field mb-4">
+      <%= f.label :password %><br/>
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Log in", class: "btn btn-blue cursor-pointer" %>
+    </div>
+  <% end %>
+</div>
