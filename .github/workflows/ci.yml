@@ -31,11 +31,72 @@ jobs:
       - name: Run Rubocop
         run: bundle exec rubocop --parallel
 
+  test:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgres://sd_logbook:test-password@localhost/sd_logbook_test
+      RAILS_ENV: test
+      SELENIUM_HEADLESS_CHROME: 'true'
+    services:
+      postgres:
+        image: postgres:14
+        env:
+          POSTGRES_USER: sd_logbook
+          POSTGRES_PASSWORD: test-password
+          POSTGRES_DB: sd_logbook_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Ruby 3.0.0
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1.1
+      - name: Set up Nodejs
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.18.1
+      - name: Cache gems
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-ruby-${{ hashFiles('./Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-ruby-
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('./yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install gems
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+      - name: Install packages
+        run: yarn install
+      - run: bundle exec rake assets:precompile
+      - run: bundle exec rake db:test:prepare
+      - run: bundle exec rake test:all
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: Failure screenshots
+          path: tmp/screenshots
+
   deploy_to_heroku:
     name: Deploy to Heroku
     runs-on: ubuntu-latest
     needs:
       - rubocop
+      - test
     if: ${{ github.ref_name == 'master' && github.event_name == 'push' }}
     steps:
       - uses: actions/checkout@v2

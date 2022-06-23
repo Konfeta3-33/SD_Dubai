@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  license: MyString
+chief:
+  name: Chief Instructor
+  license: D-0000001
 
-two:
-  name: MyString
-  license: MyString
+ivan:
+  name: Ivan
+  license: D-0000001

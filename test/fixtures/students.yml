@@ -1,21 +1,19 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+peter:
+  name: peter
+  surname: bj
+  birthday: 1980-05-20
+  phone: 0526022522
+  email: bj@peter.com
+  country: UAE
+  city: Dubai
+  address: Dubai Parks and Resorts street
 
-one:
-  name: MyString
-  surname: MyString
-  birthday: 2022-05-20
-  phone: MyString
-  email: MyString
-  country: MyString
-  city: MyString
-  address: MyString
-
-two:
-  name: MyString
-  surname: MyString
-  birthday: 2022-05-20
-  phone: MyString
-  email: MyString
-  country: MyString
-  city: MyString
-  address: MyString
+sean:
+  name: Sean
+  surname: Griffin
+  birthday: 1981-05-20
+  phone: 0526022523
+  email: sean@gmail.com
+  country: UAE
+  city: Dubai
+  address: Damac Hills 2
