@@ -9,6 +9,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, authentication_keys: [:login]
 
+  def instructor? = profile.is_a?(Instructor)
+
   def email_required? = false
 
   def email_changed? = false
