@@ -1,6 +1,7 @@
 admin:
   login: admin
   profile: chief (Instructor)
+  admin: true
 
 instructor:
   login: lizard
