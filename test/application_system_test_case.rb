@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
+  include Devise::Test::IntegrationHelpers
+
   headless = ENV['SELENIUM_HEADLESS_CHROME'].present?
   browser = headless ? :headless_chrome : :chrome
 

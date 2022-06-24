@@ -10,6 +10,9 @@ class InstructorsController < ApplicationController
     @instructor = Instructor.new
     @instructor.build_user
     authorize @instructor
+  rescue Pundit::NotAuthorizedError
+    flash[:alert] = I18n.t('instructors.not_allowed_to_create')
+    redirect_to instructors_path
   end
 
   def show
