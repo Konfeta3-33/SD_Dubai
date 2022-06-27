@@ -1,8 +1,9 @@
-<div class="mb-6">
+<div class="flex justify-between">
   <%= link_to "Back", instructor_path, class: 'btn btn-default' %>
 </div>
 
-<h2 class="mb-4 text-center font-bold text-slate-600">Edit instructor <%= "#{@instructor.name}
-                                                                          #{@instructor.surname}" %></h2>
-
-<%= render 'instructor_form' %>
+<div class="max-w-2xl mx-auto">
+  <h2 class="mb-4 text-center font-bold text-slate-600">Edit instructor <%= "#{@instructor.name}
+                                                                            #{@instructor.surname}" %></h2>
+  <%= render 'instructor_form' %>
+</div>
