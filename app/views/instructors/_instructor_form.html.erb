@@ -1,26 +1,18 @@
 <%= form_with model: @instructor do |f| %>
-  <div class="flex justify-between">
-    <div class="mb-3 row">
-      <div>
+  <div class="flex flex-wrap mb-6">
+    <div class="flex w-full mb-4 justify-between">
+      <div class="flex-1 flex flex-col mr-4">
         <%= f.label :name %>
-      </div>
-
-      <div>
         <%= f.text_field :name, placeholder: "name", class: 'input', required: true %>
+        <% if @instructor.errors.include?(:name) %>
+          <div class="mt-1 text-red-600">
+            <%= @instructor.errors.full_messages_for(:name).join(", ") %>
+          </div>
+        <% end %>
       </div>
-      <% if @instructor.errors.include?(:name) %>
-        <div class="mt-1 text-red-600">
-          <%= @instructor.errors.full_messages_for(:name).join(", ") %>
-        </div>
-      <% end %>
-    </div>
 
-    <div class="mb-3 row">
-      <div>
+      <div class="flex-1 flex-col flex">
         <%= f.label :surname %>
-      </div>
-
-      <div>
         <%= f.text_field :surname, placeholder: "surname", class: 'input', required: true %>
         <% if @instructor.errors.include?(:surname) %>
           <div class="mt-1 text-red-600">
@@ -29,15 +21,10 @@
         <% end %>
       </div>
     </div>
-  </div>
 
-  <div class="flex justify-between">
-    <div class="mb-3 row">
-      <div>
+    <div class="flex w-full justify-between mb-4">
+      <div class="flex-1 flex flex-col mr-4">
         <%= f.label :initials %>
-      </div>
-
-      <div>
         <%= f.text_field :initials, placeholder: "initials", class: 'input', required: true %>
         <% if @instructor.errors.include?(:initials) %>
           <div class="mt-1 text-red-600">
@@ -45,14 +32,9 @@
           </div>
         <% end %>
       </div>
-    </div>
 
-    <div class="mb-3 row">
-      <div>
+      <div class="flex-1 flex flex-col">
         <%= f.label :license %>
-      </div>
-
-      <div>
         <%= f.text_field :license, placeholder: "license", class: 'input', required: true %>
         <% if @instructor.errors.include?(:license) %>
           <div class="mt-1 text-red-600">
@@ -61,21 +43,19 @@
         <% end %>
       </div>
     </div>
-  </div>
 
-  <% if @instructor.new_record? %>
-    <%= render 'instructors/credentials/credentials_form', form: f %>
-  <% end %>
-
-  <div class="flex justify-between">
-    <% if policy(@instructor).edit? %>
-      <%= f.submit 'Save', class: 'btn btn-green cursor-pointer' %>
-    <% end %>
-    <% if policy(@instructor).destroy? %>
+    <div class="flex justify-between w-full mb-6 flex-wrap">
       <% unless @instructor.new_record? %>
-        <%= link_to "Delete", @instructor, method: :delete, class: "btn-red", data: { confirm: "Are you
+        <% if policy(@instructor).destroy? %>
+          <%= link_to "Delete", @instructor, method: :delete, class: "btn-red", data: { confirm: "Are you
                                                                                         sure?" } %>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+
+      <% if policy(@instructor).edit? %>
+        <%= render 'instructors/credentials/credentials_form', form: f %>
+      <% end %>
+      <%= f.submit 'Save', class: 'btn btn-green cursor-pointer' %>
+    </div>
 <% end %>
+</div>

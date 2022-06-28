@@ -1,7 +1,9 @@
+<div class="flex justify-between">
+  <%= link_to "Back", students_path, class: 'link-button-blue' %>
+</div>
+
 <div class="max-w-2xl mx-auto">
-  <div class="mb-8">
-    <%= link_to "Back", students_path, class: 'link-button-blue' %>
-  </div>
+  <h2 class="font-bold text-center mb-4 text-slate-600">Create new Student</h2>
 
   <%= render 'student_form' %>
 </div>
