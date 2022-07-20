@@ -10,8 +10,8 @@ class Student < ApplicationRecord
       [
         { name: 'Tandem', status: :skipped },
         { name: 'Cat. A', status: :passed, jumps: [] },
-        { name: 'Cat. B', status: :current },
-        { name: 'Cat. C1', status: :pending },
+        { name: 'Cat. B', status: :repeat },
+        { name: 'Cat. C1', status: :current },
         { name: 'Cat. C2', status: :pending },
         { name: 'Cat. D1', status: :pending },
         { name: 'Cat. D2', status: :pending },
