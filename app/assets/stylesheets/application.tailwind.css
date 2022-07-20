@@ -54,6 +54,10 @@
     .input {
         @apply rounded-md;
     }
+
+    .svg-green {
+        @apply fill-green-300
+    }
 }
 
 @layer base {

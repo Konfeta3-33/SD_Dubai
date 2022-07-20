@@ -9,9 +9,13 @@
           <li>
             <% link_classes = [
               ('pl-7' unless %i[current passed].include?(level[:status])),
-              ('svg-gray' if level[:status] == :passed)
+              ('svg-green' if level[:status] == :passed),
+              ('bg-green-600' if level[:status] == :passed),
+              ('bg-gray-300' if level[:status] == :skipped),
+              ('bg-red-600' if level[:status] == :repeat)
             ].compact %>
-            <a class="flex px-3 py-2 items-center <%= link_classes.join(' ') %>" href="#">
+            <a class="flex px-3 py-2 items-center rounded-md <%= link_classes.join(' ') %>"
+               href="#">
               <% if level[:status] == :current %>
                 <%= svg('arrow-right') %>
               <% elsif level[:status] == :passed %>
