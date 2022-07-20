@@ -11,6 +11,10 @@
         @apply border-2 border-gray-200;
     }
 
+    .btn-default:hover {
+        @apply border-gray-400 text-gray-700
+    }
+
     .btn-blue {
         @apply bg-blue-600 text-white;
     }
@@ -28,19 +32,19 @@
     }
 
     .btn-red {
-        @apply py-2 px-4 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75 bg-red-600 hover:bg-red-700 hover:text-white focus:ring-red-400 shadow-md;
+        @apply hover:border-red-600;
     }
 
     .link-button-blue {
-        @apply py-2 px-4 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+        @apply py-3 px-4 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
     }
 
     .link-button-green {
-        @apply py-2 px-4 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+        @apply py-2 px-4 border-2 border-green-700 text-green-600 font-semibold rounded-lg shadow-md hover:bg-green-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
     }
 
     .link-button-green-reverse {
-        @apply py-2 px-4 text-green-500 font-semibold rounded-lg shadow-md hover:bg-green-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+        @apply py-2 px-4 text-green-600 border-2 border-green-700 font-semibold rounded-lg shadow-md hover:bg-green-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
     }
 
     .container {
@@ -56,6 +60,7 @@
     h1 {
         @apply text-2xl;
     }
+
     h2 {
         @apply text-xl;
     }
@@ -69,7 +74,6 @@
     }
 
     svg {
-        height: 1em;
-        width: 1em;
+        @apply h-4 w-4
     }
 }

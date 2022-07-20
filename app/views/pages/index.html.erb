@@ -2,7 +2,7 @@
   <h5 class="text-2xl mb-4 w-full text-center">
     Hello, <strong><%= current_user.login %></strong>!
   </h5>
-  <div>
+  <div class="flex justify-evenly">
     <%= link_to 'Instructors', instructors_path, :class => 'link-button-blue' %>
     <%= link_to 'Students', students_path, :class => 'link-button-blue' %>
   </div>

@@ -45,15 +45,18 @@
     </div>
 
     <div class="flex justify-between w-full mb-6 flex-wrap">
-      <% unless @instructor.new_record? %>
-        <% if policy(@instructor).destroy? %>
-          <%= link_to "Delete", @instructor, method: :delete, class: "btn-red", data: { confirm: "Are you
-                                                                                        sure?" } %>
-        <% end %>
-      <% end %>
 
       <% if policy(@instructor).edit? %>
         <%= render 'instructors/credentials/credentials_form', form: f %>
+      <% end %>
+
+      <% unless @instructor.new_record? %>
+        <% if policy(@instructor).destroy? %>
+          <%= link_to "Delete",
+                      instructor_path(@instructor),
+                      data: { 'turbo-method': :delete, 'turbo-confirm': "Are you sure?" },
+                      class: "btn btn-default btn-red" %>
+        <% end %>
       <% end %>
       <%= f.submit 'Save', class: 'btn btn-green cursor-pointer' %>
     </div>
