@@ -25,6 +25,9 @@ Style/Documentation:
 Style/EmptyMethod:
   EnforcedStyle: expanded
 
+Style/HashSyntax:
+  EnforcedShorthandSyntax: either
+
 Bundler/OrderedGems:
   Enabled: false
 
