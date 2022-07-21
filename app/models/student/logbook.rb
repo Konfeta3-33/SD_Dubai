@@ -2,8 +2,6 @@ class Student < ApplicationRecord
   class Logbook
     attr_reader :student
 
-    delegate :jumps, to: :student
-
     def initialize(student)
       @student = student
     end
@@ -24,7 +22,7 @@ class Student < ApplicationRecord
         { name: 'Cat. D2' }.merge(level_summary(Jumps::CategoryD2)),
         { name: 'Cat. E1' }.merge(level_summary(Jumps::CategoryE1)),
         { name: 'Cat. E2' }.merge(level_summary(Jumps::CategoryE2)),
-        { name: 'Coaching', status: :pending }
+        { name: 'Coaching', status: :pending, jumps: [] }
       ]
     end
 
@@ -34,13 +32,16 @@ class Student < ApplicationRecord
 
     def level_summary(type)
       jumps_by_type = jumps.select { |jump| jump.is_a? type }
-                           .sort_by(&:created_at)
       status = jumps_by_type.last&.status || 'pending'
 
       {
         status: status,
         jumps: jumps_by_type
       }
+    end
+
+    def jumps
+      @jumps ||= student.jumps.order(:created_at)
     end
   end
 end

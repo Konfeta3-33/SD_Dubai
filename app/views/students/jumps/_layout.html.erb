@@ -11,8 +11,10 @@
               ('bg-gray-300' if level[:status] == 'skipped'),
               ('bg-red-200' if level[:status] == 'repeat')
             ].compact %>
-            <a class="flex px-3 py-2 items-center rounded-md <%= link_classes.join(' ') %>"
-               href="#">
+            <% jump = level[:jumps].last %>
+            <% jump_path = jump ? student_jump_path(@student, jump) : '#' %>
+            <%= link_to jump_path, class: "flex px-3 py-2 items-center rounded-md
+#{link_classes.join(' ')}" do %>
               <% if level[:status] == 'current' %>
                 <%= svg('arrow-right') %>
               <% elsif level[:status] == 'passed' %>
@@ -27,13 +29,13 @@
               <% if level[:status] == 'repeat' %>
                 <span class="text-gray-500">(repeat)</span>
               <% end %>
-            </a>
+            <% end %>
           </li>
         <% end %>
       </ul>
     </div>
   </aside>
   <main class="p-4">
-    <%= render 'jump_details' %>
+    <%= yield %>
   </main>
 </div>

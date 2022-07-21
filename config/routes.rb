@@ -8,10 +8,7 @@ Rails.application.routes.draw do
     resource :credentials, only: %i[edit update], module: :instructors
   end
   resources :students do
-    resource :logbook, module: :students
-    resources :jumps do
-      # resource :category_a, module: :jumps
-    end
+    resources :jumps, module: :students
   end
 
   root 'pages#index'
