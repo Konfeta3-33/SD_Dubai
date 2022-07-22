@@ -56,7 +56,7 @@
     }
 
     .svg-green {
-        @apply fill-green-300
+        @apply fill-green-700
     }
 }
 

@@ -1,0 +1,14 @@
+<div class="flex justify-between">
+  <%= link_to "Back", student_path(@student), class: 'btn btn-default' %>
+</div>
+
+<div class="mx-auto">
+  <h2 class="text-center font-bold mb-4 text-slate-600">
+    Logbook: <%= @student.full_name %>
+  </h2>
+
+  <%= render partial: @jump, layout: 'layout' %>
+</div>
+
+
+

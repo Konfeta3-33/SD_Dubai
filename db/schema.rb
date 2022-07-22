@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_20_110804) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_20_045918) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,27 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_20_110804) do
     t.string "license"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "jumps", force: :cascade do |t|
+    t.string "type"
+    t.integer "status", default: 0, null: false
+    t.bigint "instructor_id"
+    t.bigint "student_id"
+    t.jsonb "questionnaire"
+    t.string "improvement_points", array: true
+    t.integer "jump_no"
+    t.date "date"
+    t.string "place"
+    t.string "equipment"
+    t.string "aircraft"
+    t.integer "altitude_ft"
+    t.integer "delay"
+    t.integer "total_freefall"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["instructor_id"], name: "index_jumps_on_instructor_id"
+    t.index ["student_id"], name: "index_jumps_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -52,4 +73,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_20_110804) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "jumps", "instructors"
+  add_foreign_key "jumps", "students"
 end
