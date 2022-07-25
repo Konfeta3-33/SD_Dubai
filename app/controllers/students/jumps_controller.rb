@@ -5,6 +5,7 @@ module Students
     before_action :set_logbook
 
     def show
+      @instructor = Instructor.find(current_user.profile_id)
     end
 
     def index

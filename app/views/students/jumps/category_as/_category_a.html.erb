@@ -23,7 +23,7 @@
     </tr>
     <tr class="border-x-3 border-gray-500 border-b-3">
       <th class="border-2 py-1 px-2">
-        <%= f.text_field :jump_no, class: "border-none w-20 bg-gray-200 text-center p-1 rounded-md",
+        <%= f.text_field :jump_no, class: "border-none w-20 bg-gray-100 text-center p-1 rounded-md",
                          required: true %>
         <% if @jump.errors.include?(:jump_no) %>
           <div class="mt-1 text-red-600">
@@ -32,32 +32,32 @@
         <% end %>
       </th>
       <th class="border-2 py-1 px-1">
-        <%= f.date_field :date, class: "border-none bg-gray-200 text-center p-1 rounded-md",
+        <%= f.date_field :date, class: "border-none bg-gray-100 text-center p-1 rounded-md",
                          required: true %>
       </th>
       <th class="border-2 py-1 px-1">
-        <%= f.text_field :place, class: "border-none w-20 bg-gray-200 text-center p-1
+        <%= f.text_field :place, class: "border-none w-20 bg-gray-100 text-center p-1
         rounded-md", required:
           true %>
       </th>
       <th class="border-2 py-1 px-1">
-        <%= f.text_field :equipment, class: "border-none w-28 bg-gray-200 text-center p-1 rounded-md",
+        <%= f.text_field :equipment, class: "border-none w-28 bg-gray-100 text-center p-1 rounded-md",
                          required: true %>
       </th>
       <th class="border-2 py-1 px-1">
-        <%= f.text_field :aircraft, class: "border-none w-28 bg-gray-200 text-center p-1 rounded-md",
+        <%= f.text_field :aircraft, class: "border-none w-28 bg-gray-100 text-center p-1 rounded-md",
                          required: true %>
       </th>
       <th class="border-2 py-1 px-1">
-        <%= f.text_field :altitude_ft, class: "border-none w-20 bg-gray-200 text-center p-1 rounded-md",
+        <%= f.text_field :altitude_ft, class: "border-none w-20 bg-gray-100 text-center p-1 rounded-md",
                          required: true %>
       </th>
       <th class="border-2 py-1 px-1">
-        <%= f.text_field :delay, class: "border-none w-18 bg-gray-200 text-center p-1 rounded-md",
+        <%= f.text_field :delay, class: "border-none w-18 bg-gray-100 text-center p-1 rounded-md",
                          required: true %>
       </th>
       <th class="border-2 py-1 px-1">
-        <%= f.text_field :total_freefall, class: "border-none w-14 bg-gray-200 text-center p-1 rounded-md",
+        <%= f.text_field :total_freefall, class: "border-none w-14 bg-gray-100 text-center p-1 rounded-md",
                          required: true %>
       </th>
     </tr>
@@ -66,7 +66,7 @@
     <tfoot class="border-3 border-gray-500">
     <tr>
       <td class="border-2 py-1 px-3" colspan="3">
-        <span>Instructor: </span>
+        <span>Instructor: </span> <%= @instructor.full_name %>
       </td>
       <td rowspan="3" class="border-2 py-1 px-3">
         <span>Improvement points:</span>
@@ -78,7 +78,7 @@
     </tr>
     <tr>
       <td class="border-2 py-1 px-3" colspan="3">
-        <span>Sign & License:</span>
+        <span>Sign & License:</span> <%= @instructor.license %>
       </td>
       <td class="border-2 py-1 px-3" colspan="4">
         <%= f.text_field :improvement_points, multiple: true, value: @jump.improvement_points.to_a[1].to_s,
