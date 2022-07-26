@@ -8,7 +8,7 @@ module Instructors
 
     def update
       if @instructor.update instructor_params
-        flash[:notice] = "Instructor's credentials #{@instructor.name} #{@instructor.surname}
+        flash[:notice] = "Instructor's credentials #{@instructor.full_name}
 updated!"
         redirect_to @instructor
       else

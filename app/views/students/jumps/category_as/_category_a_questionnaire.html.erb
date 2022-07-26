@@ -1,0 +1,309 @@
+<%= form.fields :questionnaire, model: OpenStruct.new(questionnaire) do |fields| %>
+  <table class="w-full border-x-3 border-gray-500 border-y-0">
+    <tbody>
+    <tr>
+      <td class="border-2 py-1 px-3 font-bold text-center width-table" rowspan="4">
+        <span>Exit</span>
+      </td>
+      <td class="border-2 py-1 px-3 text-[15px] w-3/12">
+        <span>Set-up</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :exit_set_up, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Checks</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :exit_checks, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Count</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :exit_count, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr class="border-b-3 border-gray-500">
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Arch</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :exit_arch, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="border-2 py-1 px-3 font-bold text-center width-table" rowspan="2">
+        <span>CoA</span>
+      </td>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Neutral body position</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :coa_neutral_body_position, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr class="border-b-3 border-gray-500">
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Signals / response</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :coa_signals_response, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="border-2 py-1 px-3 font-bold text-center width-table" rowspan="4">
+        <span>Practice pull x 3</span>
+      </td>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Arch</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :practice_pull_arch, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Reach (compensate)</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :practice_pull_reach_compensate, class: "border-none w-full
+        bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Locate (grab)</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :practice_pull_locate_grab, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr class="border-b-3 border-gray-500">
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Recover</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :practice_pull_recover, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="border-2 py-1 px-3 font-bold text-center width-table" rowspan="4">
+        <span>Short CoA</span>
+      </td>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Alti awareness</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :short_coa_alti_awareness, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Arch</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :short_coa_arch, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Legs</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :short_coa_legs, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr class="border-b-3 border-gray-500">
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Relax</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :short_coa_relax, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="border-2 py-1 px-3 font-bold text-center width-table" rowspan="5">
+        <span>Pull sequence</span>
+      </td>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>6000 ft. lock onto</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :pull_sequence_6000_ft_lock_onto, class: "border-none w-full
+        bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>5500 ft. wave off</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :pull_sequence_5500_ft_wave_off, class: "border-none w-full
+        bg-gray-100 p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Arch & reach</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :pull_sequence_arch_and_reach, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Locate (grab)</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :pull_sequence_locate_grab, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr class="border-b-3 border-gray-500">
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Throw away</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :pull_sequence_throw_away, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="border-2 py-1 px-3 font-bold text-center width-table" rowspan="6">
+        <span>Canopy control</span>
+      </td>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Check canopy, Control check</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :canopy_control_check_canopy_control_check, class: "border-none w-full
+        bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>TAP (locate DZ)</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :canopy_control_tap_locate_dz, class: "border-none w-full
+        bg-gray-100 p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Holding area</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :canopy_control_holding_area, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Landing pattern</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :canopy_control_landing_pattern, class: "border-none w-full
+        bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Flare</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :canopy_control_flare, class: "border-none w-full bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="border-2 py-1 px-3 text-[15px]">
+        <span>Distance to target</span>
+      </td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-3"></td>
+      <td class="border-2 py-1 px-1 w-1/2">
+        <%= fields.text_field :canopy_control_distance_to_target, class: "border-none w-full
+        bg-gray-100
+           p-1 rounded-md text-[15px]" %>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+<% end %>

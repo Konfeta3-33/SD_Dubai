@@ -3,7 +3,8 @@
 </div>
 
 <div class="max-w-2xl mx-auto">
-  <h2 class="mb-4 text-center font-bold text-slate-600">Edit instructor <%= "#{@instructor.name}
-                                                                            #{@instructor.surname}" %></h2>
+  <h2 class="mb-4 text-center font-bold text-slate-600">
+    Edit instructor <%= "#{@instructor.full_name}" %>
+  </h2>
   <%= render 'instructor_form' %>
 </div>

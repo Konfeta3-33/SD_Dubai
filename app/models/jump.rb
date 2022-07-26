@@ -9,7 +9,7 @@ class Jump < ApplicationRecord
     skipped: 3
   }
 
-  validates :instructor, presence: true, if: :completed?
+  # validates :instructor, presence: true, if: :completed?
 
   def completed?
     passed? || repeat?

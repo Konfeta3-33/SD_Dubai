@@ -7,4 +7,8 @@ class Instructor < ApplicationRecord
 
   validates :name, :license, :surname, presence: true
   validates :initials, presence: true, length: { maximum: 3 }
+
+  def full_name
+    "#{name} #{surname}"
+  end
 end

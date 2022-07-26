@@ -11,7 +11,7 @@ class Student < ApplicationRecord
       Jumps::CategoryA.create!(student: student, status: :current)
     end
 
-    def course_levels # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
+    def course_levels # rubocop:disable Metrics/AbcSize
       [
         { name: 'Tandem' }.merge(level_summary(Jumps::Tandem)),
         { name: 'Cat. A' }.merge(level_summary(Jumps::CategoryA)),

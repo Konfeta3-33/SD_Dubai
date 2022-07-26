@@ -1,1 +1,128 @@
-I'm category A form vashu mashu
+<%= form_with model: @jump, scope: :jump, url: student_jump_path(@student, @jump) do |f| %>
+  <table class="table-auto w-full border">
+    <thead>
+    <tr class="border-3 border-gray-500">
+      <th class="border-2 py-1 px-3">AFF<br>Cat A</th>
+      <th colspan="7" class="border-2 py-1 px-3">
+        <div class="flex justify-between">
+          <span>Name:</span>
+          <span class="text-red-600"> <%= @student.full_name %></span>
+          <span class="text-gray-400">ID №: <%= @student.id %></span>
+        </div>
+      </th>
+    </tr>
+    <tr class="border-x-3 border-gray-500">
+      <th class="border-2 py-1 px-3">Jump №</th>
+      <th class="border-2 py-1 px-3">Date</th>
+      <th class="border-2 py-1 px-3">Place</th>
+      <th class="border-2 py-1 px-3">Equipment</th>
+      <th class="border-2 py-1 px-3">Aircraft</th>
+      <th class="border-2 py-1 px-3">Altitude</th>
+      <th class="border-2 py-1 px-3">Delay</th>
+      <th class="border-2 py-1 px-3">Total freefall</th>
+    </tr>
+    <tr class="border-x-3 border-gray-500 border-b-3">
+      <th class="border-2 py-1 px-2">
+        <%= f.text_field :jump_no, class: "border-none w-20 bg-gray-100 text-center p-1 rounded-md",
+                         required: true %>
+        <% if @jump.errors.include?(:jump_no) %>
+          <div class="mt-1 text-red-600">
+            <%= @jump.errors.full_messages_for(:jump_no).join(", ") %>
+          </div>
+        <% end %>
+      </th>
+      <th class="border-2 py-1 px-1">
+        <%= f.date_field :date, class: "border-none bg-gray-100 text-center p-1 rounded-md",
+                         required: true %>
+      </th>
+      <th class="border-2 py-1 px-1">
+        <%= f.text_field :place, class: "border-none w-20 bg-gray-100 text-center p-1
+        rounded-md", required: true %>
+      </th>
+      <th class="border-2 py-1 px-1">
+        <%= f.text_field :equipment, class: "border-none w-28 bg-gray-100 text-center p-1 rounded-md",
+                         required: true %>
+      </th>
+      <th class="border-2 py-1 px-1">
+        <%= f.text_field :aircraft, class: "border-none w-28 bg-gray-100 text-center p-1 rounded-md",
+                         required: true %>
+      </th>
+      <th class="border-2 py-1 px-1">
+        <%= f.text_field :altitude_ft, class: "border-none w-20 bg-gray-100 text-center p-1 rounded-md",
+                         required: true %>
+      </th>
+      <th class="border-2 py-1 px-1">
+        <%= f.text_field :delay, class: "border-none w-18 bg-gray-100 text-center p-1 rounded-md",
+                         required: true %>
+      </th>
+      <th class="border-2 py-1 px-1">
+        <%= f.text_field :total_freefall, class: "border-none w-14 bg-gray-100 text-center p-1 rounded-md",
+                         required: true %>
+      </th>
+    </tr>
+    </thead>
+  </table>
+
+  <%= render 'students/jumps/category_as/category_a_questionnaire', form: f, questionnaire: @jump
+    .questionnaire %>
+
+  <table class="w-full mb-6">
+    <tfoot class="border-3 border-gray-500">
+    <tr>
+      <td class="border-2 py-1 px-3" colspan="3">
+        <span>Instructor: </span> <%= @instructor.full_name %>
+      </td>
+      <td rowspan="3" class="border-2 py-1 px-3">
+        <span>Improvement points:</span>
+      </td>
+      <td class="border-2 py-1 px-3" colspan="4">
+        <%= f.text_field :improvement_points, multiple: true, value: @jump.improvement_points.to_a[0].to_s,
+                         class: "border-none w-full" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="border-2 py-1 px-3" colspan="3">
+        <span>Sign & License:</span> <%= @instructor.license %>
+      </td>
+      <td class="border-2 py-1 px-3" colspan="4">
+        <%= f.text_field :improvement_points, multiple: true, value: @jump.improvement_points.to_a[1].to_s,
+                         class: "border-none w-full" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="border-2 py-1 px-3" colspan="3">
+        <div class="flex justify-between">
+          <div>
+            <%= f.label :status_passed, class: "mr-2" do %>
+              <span>Passed</span>
+              <%= f.radio_button :status, :passed, required: true %>
+            <% end %>
+          </div>
+          <div>
+            <%= f.label :status_repeat, class: "mr-2" do %>
+              <span>Repeat</span>
+              <%= f.radio_button :status, :repeat, required: true %>
+            <% end %>
+          </div>
+          <div>
+            <label for="quiz">Quiz</label>
+            <input type="checkbox">
+
+            <%#= f.label :quiz, class: "mr-2" do %>
+            <!--              <span>Quiz</span>-->
+            <%#= f.check_box :quiz %>
+            <%# end %>
+
+          </div>
+        </div>
+      </td>
+      <td class="border-2 py-1 px-3" colspan="4">
+        <%= f.text_field :improvement_points, multiple: true, value: @jump.improvement_points.to_a[2].to_s,
+                         class: "border-none w-full" %>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+
+  <%= f.submit 'Save', class: 'btn btn-green cursor-pointer' %>
+<% end %>

@@ -25,7 +25,7 @@ class InstructorsController < ApplicationController
     @instructor = Instructor.new instructor_params
     authorize @instructor
     if @instructor.save
-      flash[:notice] = "Created Instructor #{@instructor.name} #{@instructor.surname}!"
+      flash[:notice] = "Created Instructor #{@instructor.full_name}!"
       redirect_to instructors_path
     else
       render :new, status: :unprocessable_entity
@@ -35,7 +35,7 @@ class InstructorsController < ApplicationController
   def update
     authorize @instructor
     if @instructor.update instructor_params
-      flash[:notice] = "Instructor #{@instructor.name} #{@instructor.surname} updated!"
+      flash[:notice] = "Instructor #{@instructor.full_name} updated!"
       redirect_to instructor_path
     else
       render :edit, status: :unprocessable_entity
@@ -46,10 +46,10 @@ class InstructorsController < ApplicationController
     authorize @instructor
     if @instructor.destroy
       redirect_to instructors_path, status: :see_other
-      flash[:alert] = "Instructor #{@instructor.name} #{@instructor.surname} deleted!"
+      flash[:alert] = "Instructor #{@instructor.full_name} deleted!"
     else
       render :edit, status: :unprocessable_entity
-      flash[:alert] = "Instructor #{@instructor.name} #{@instructor.surname} has not been deleted!"
+      flash[:alert] = "Instructor #{@instructor.full_name} has not been deleted!"
     end
   end
 
