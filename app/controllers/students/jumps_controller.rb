@@ -46,6 +46,7 @@ module Students
         :delay,
         :total_freefall,
         :status,
+        questionnaire: {},
         improvement_points: []
       )
     end

@@ -58,6 +58,10 @@
     .svg-green {
         @apply fill-green-700
     }
+
+    .width-table {
+        width: 12%;
+    }
 }
 
 @layer base {

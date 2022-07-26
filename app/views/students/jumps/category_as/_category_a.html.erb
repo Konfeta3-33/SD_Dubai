@@ -1,5 +1,5 @@
 <%= form_with model: @jump, scope: :jump, url: student_jump_path(@student, @jump) do |f| %>
-  <table class="table-auto w-full border mb-6">
+  <table class="table-auto w-full border">
     <thead>
     <tr class="border-3 border-gray-500">
       <th class="border-2 py-1 px-3">AFF<br>Cat A</th>
@@ -37,8 +37,7 @@
       </th>
       <th class="border-2 py-1 px-1">
         <%= f.text_field :place, class: "border-none w-20 bg-gray-100 text-center p-1
-        rounded-md", required:
-          true %>
+        rounded-md", required: true %>
       </th>
       <th class="border-2 py-1 px-1">
         <%= f.text_field :equipment, class: "border-none w-28 bg-gray-100 text-center p-1 rounded-md",
@@ -62,7 +61,12 @@
       </th>
     </tr>
     </thead>
-    <tbody></tbody>
+  </table>
+
+  <%= render 'students/jumps/category_as/category_a_questionnaire', form: f, questionnaire: @jump
+    .questionnaire %>
+
+  <table class="w-full mb-6">
     <tfoot class="border-3 border-gray-500">
     <tr>
       <td class="border-2 py-1 px-3" colspan="3">
@@ -101,10 +105,14 @@
             <% end %>
           </div>
           <div>
-            <%= f.label :quiz, class: "mr-2" do %>
-              <span>Quiz</span>
-              <%= f.check_box :quiz %>
-            <% end %>
+            <label for="quiz">Quiz</label>
+            <input type="checkbox">
+
+            <%#= f.label :quiz, class: "mr-2" do %>
+            <!--              <span>Quiz</span>-->
+            <%#= f.check_box :quiz %>
+            <%# end %>
+
           </div>
         </div>
       </td>
